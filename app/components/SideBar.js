@@ -1,5 +1,6 @@
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+
 
 const SideBar = () => {
   return (
@@ -9,23 +10,23 @@ const SideBar = () => {
           <h3 className="text-xl font-bold">Recipes</h3>
           <ul className="pl-2 my-6 space-y-4 text-sm text-gray-500">
             <li>
-              <a href="#">Morning Bliss Café</a>
+              <Link href="/categorized">Morning Bliss Café</Link>
             </li>
 
             <li>
-              <a href="#">Sunrise Bites Kitchen</a>
+              <Link href="/categorized">Sunrise Bites Kitchen</Link>
             </li>
 
             <li>
-              <a href="#">Brunch Haven Delights</a>
+              <Link href="/categorized">Brunch Haven Delights</Link>
             </li>
 
             <li>
-              <a href="#">Rise & Dine Eatery</a>
+              <Link href="/categorized">Rise & Dine Eatery</Link>
             </li>
 
             <li>
-              <a href="#">Breakfast Oasis Junction</a>
+              <Link href="/categorized">Breakfast Oasis Junction</Link>
             </li>
           </ul>
         </div>

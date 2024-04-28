@@ -39,7 +39,80 @@ export default function Home() {
             </div>
           </section>
 
+          <section className="container py-8">
+            <div className="grid grid-cols-12 py-4">
           <SideBar />
+
+              <div className="col-span-12 md:col-span-9">
+                <div className="grid grid-cols-1 gap-6 my-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+                  <div className="card">
+                    <img
+                      src="https://source.unsplash.com/-YHSwy6uqvk/300x160"
+                      className="rounded-md"
+                      alt=""
+                    />
+                    <h4 className="my-2">Chef John's Turkey Sloppy Joes</h4>
+                    <div className="flex justify-between py-2 text-xs text-gray-500">
+                      <span>⭐️ 5.0</span>
+                      <span>By: John Doe</span>
+                    </div>
+                  </div>
+
+                  <div className="card">
+                    <img
+                      src="https://source.unsplash.com/-YHSwy6uqvk/300x160"
+                      className="rounded-md"
+                      alt=""
+                    />
+                    <h4 className="my-2">Chef John's Turkey Sloppy Joes</h4>
+                    <div className="flex justify-between py-2 text-xs text-gray-500">
+                      <span>⭐️ 5.0</span>
+                      <span>By: John Doe</span>
+                    </div>
+                  </div>
+
+                  <div className="card">
+                    <img
+                      src="https://source.unsplash.com/-YHSwy6uqvk/300x160"
+                      className="rounded-md"
+                      alt=""
+                    />
+                    <h4 className="my-2">Chef John's Turkey Sloppy Joes</h4>
+                    <div className="flex justify-between py-2 text-xs text-gray-500">
+                      <span>⭐️ 5.0</span>
+                      <span>By: John Doe</span>
+                    </div>
+                  </div>
+
+                  <div className="card">
+                    <img
+                      src="https://source.unsplash.com/-YHSwy6uqvk/300x160"
+                      className="rounded-md"
+                      alt=""
+                    />
+                    <h4 className="my-2">Chef John's Turkey Sloppy Joes</h4>
+                    <div className="flex justify-between py-2 text-xs text-gray-500">
+                      <span>⭐️ 5.0</span>
+                      <span>By: John Doe</span>
+                    </div>
+                  </div>
+
+                  <div className="card">
+                    <img
+                      src="https://source.unsplash.com/-YHSwy6uqvk/300x160"
+                      className="rounded-md"
+                      alt=""
+                    />
+                    <h4 className="my-2">Chef John's Turkey Sloppy Joes</h4>
+                    <div className="flex justify-between py-2 text-xs text-gray-500">
+                      <span>⭐️ 5.0</span>
+                      <span>By: John Doe</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
       </body>
     </div>

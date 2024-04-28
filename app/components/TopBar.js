@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { iLogo } from "../utils/imageImports";
 
 const TopBar = () => {
-    return (
-        <div>
-                <nav>
+  return (
+    <div>
+      <nav>
         <div className="container flex justify-between py-6">
           <a href="index.html">
-            <Image className="object-cover h-[40px]" src="/assets/images/logo.png" alt="" width={40} height={40} />
+            <Image className="object-cover" src={iLogo} alt="" />
           </a>
 
           <ul className="flex gap-4 text-sm text-gray-500">
@@ -28,9 +29,9 @@ const TopBar = () => {
             </li>
           </ul>
         </div>
-      </nav>  
-        </div>
-    )
-}
+      </nav>
+    </div>
+  );
+};
 
-export default TopBar
+export default TopBar;

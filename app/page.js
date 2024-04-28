@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
 import RecipeCard from "./components/RecipeCard";

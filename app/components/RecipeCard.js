@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 const RecipeCard = () => {
   return (
-    <div className="card">
+    <Link href={`/recipe/98`} className="card">
       <img
         src="https://source.unsplash.com/-YHSwy6uqvk/300x160"
         className="rounded-md"
@@ -11,7 +13,7 @@ const RecipeCard = () => {
         <span>⭐️ 5.0</span>
         <span>By: John Doe</span>
       </div>
-    </div>
+    </Link>
   );
 };
 

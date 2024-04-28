@@ -8,7 +8,7 @@ const TopBar = () => {
       <nav>
         <div className="container flex justify-between py-6">
           <a href="index.html">
-            <Image className="object-cover" src={iLogo} alt="" />
+            <Image className="object-cover" src={iLogo} alt="" height={40} width={40}/>
           </a>
 
           <ul className="flex gap-4 text-sm text-gray-500">

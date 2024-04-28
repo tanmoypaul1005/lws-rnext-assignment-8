@@ -7,8 +7,13 @@ const TopBar = () => {
     <div>
       <nav>
         <div className="container flex justify-between py-6">
-          <a href="index.html">
-            <Image className="object-cover" src={iLogo} alt="" height={40} width={40}/>
+          <a className="relative" href="index.html">
+            <Image
+              style={{ maxHeight: "40px", minHeight: "40px" }}
+              className=""
+              src={iLogo}
+              alt=""
+            />
           </a>
 
           <ul className="flex gap-4 text-sm text-gray-500">

@@ -6,9 +6,6 @@ import RecipeCard from "./components/RecipeCard";
 export default function Home() {
   return (
     <div>
-      <body>
-        <TopBar />
-
         <main>
           <section className="container">
             <div
@@ -44,7 +41,6 @@ export default function Home() {
             </div>
           </section>
         </main>
-      </body>
     </div>
   );
 }

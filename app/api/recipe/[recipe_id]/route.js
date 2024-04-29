@@ -1,12 +1,11 @@
 import connectMongo from "@/dbConnect/connectMongo";
 import recipes from "@/model/Recipes";
 
-export async function GET(request) {
+export async function GET(request,{ params }) {
   try {
     await connectMongo();
-
-    const { searchParams } = new URL(request.url)
-    const id = searchParams.get('recipe_id')
+    const id = params?.recipe_id
+    console.log("id,,,,,,",params?.recipe_id)
   
     const recipe = await recipes.findOne({_id:id});
     return Response.json({

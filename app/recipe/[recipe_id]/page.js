@@ -1,4 +1,7 @@
 const RecipeDetails = () => {
+
+  // http://localhost:3000/api/recipe/662ef0e14b2a1df29fbde4ca
+
   return (
     <body>
       <main>

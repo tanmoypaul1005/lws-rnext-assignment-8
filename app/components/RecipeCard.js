@@ -1,17 +1,20 @@
 import Link from "next/link";
 
-const RecipeCard = () => {
+const RecipeCard = ({ recipe }) => {
+  const { name, description, author, image, thumbnail, category, rating } =
+    recipe;
+
   return (
     <Link href={`/recipe/98`} className="card">
       <img
-        src="https://source.unsplash.com/-YHSwy6uqvk/300x160"
+        src={thumbnail}
         className="rounded-md"
         alt=""
       />
-      <h4 className="my-2">Chef Johns Turkey Sloppy Joes</h4>
+      <h4 className="my-2">{name}</h4>
       <div className="flex justify-between py-2 text-xs text-gray-500">
-        <span>⭐️ 5.0</span>
-        <span>By: John Doe</span>
+        <span>⭐️ {rating}</span>
+        <span>By: {author}</span>
       </div>
     </Link>
   );

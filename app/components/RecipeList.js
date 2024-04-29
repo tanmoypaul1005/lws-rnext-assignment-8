@@ -3,8 +3,9 @@ import RecipeCard from './RecipeCard'
 
 const RecipeList =async () => {
 
-    const recipeList=await fetch("http://localhost:3000/api/recipe")
+    const recipeList=await fetch("http://localhost:3000/api/recipe",{ cache: 'no-store' })
     .then((res)=>res.json())
+    
 
     return (
         <div className="col-span-12 md:col-span-9">

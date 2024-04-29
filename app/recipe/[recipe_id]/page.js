@@ -1,6 +1,10 @@
-const RecipeDetails = () => {
-
+const RecipeDetails = async ({ params }) => {
   // http://localhost:3000/api/recipe/662ef0e14b2a1df29fbde4ca
+
+  const recipeDetails = await fetch(
+    "http://localhost:3000/api/recipe/" + params?.recipe_id
+  ).then((res) => res.json());
+  console.log("recipeDetails", recipeDetails);
 
   return (
     <body>
@@ -9,22 +13,20 @@ const RecipeDetails = () => {
           <div className="container grid grid-cols-12 gap-8 justify-items-center">
             <div className="col-span-12 md:col-span-6">
               <img
-                src="https://source.unsplash.com/Zh0mYmMBZjQ/600x600"
+                src={recipeDetails?.data?.image}
                 alt=""
                 className="object-contain w-full h-full rounded-lg"
               />
             </div>
             <div className="flex flex-col justify-center col-span-12 py-8 md:col-span-6">
               <h2 className="text-4xl font-semibold leading-10 lg:w-8/12">
-                White calzones with marinara sauce
+                {recipeDetails?.data?.name}
               </h2>
               <p className="text-xs text-[#eb4a36] italic my-2">
-                Breakfast and Brunch
+                {recipeDetails?.data?.category}
               </p>
               <p className="my-6 text-sm leading-6 text-gray-600">
-                Supermarket brands of ricotta contain stabilizers, which can
-                give the cheese a gummy texture when baked. Check the label and
-                choose ricotta made with as few ingredients as possible.
+                {recipeDetails?.data?.description}
               </p>
 
               <div className="flex justify-center gap-4 my-12 divide-x">
@@ -48,7 +50,9 @@ const RecipeDetails = () => {
                   <h3 className="mt-2 text-lg font-medium text-gray-700">
                     Prep time
                   </h3>
-                  <p className="text-sm text-gray-500">30 minutes</p>
+                  <p className="text-sm text-gray-500">
+                  {recipeDetails?.data?.activeTime}
+                  </p>
                 </div>
                 <div className="flex-1 text-center">
                   <svg
@@ -71,7 +75,10 @@ const RecipeDetails = () => {
                   <h3 className="mt-2 text-lg font-medium text-gray-700">
                     Cook time
                   </h3>
-                  <p className="text-sm text-gray-500">1 hour</p>
+                  <p className="text-sm text-gray-500">
+                    {" "}
+                    {recipeDetails?.data?.totalTime}
+                  </p>
                 </div>
                 <div className="flex-1 text-center">
                   <svg
@@ -149,49 +156,12 @@ const RecipeDetails = () => {
           <div className="container py-12">
             <h3 className="py-6 text-xl font-semibold">How to Make it</h3>
             <div>
-              <div className="step">
-                <h3>Step 1</h3>
-                <p>
-                  Labour, of evaluated would he the a the our what is in the
-                  arduous sides behavioural is which the have didn't kicked
-                  records the it framework by the for traveler sure the can most
-                  well her. Entered have break himself cheek, and activity, for
-                  bit of text.
-                </p>
-              </div>
-
-              <div className="step">
-                <h3>Step 2</h3>
-                <p>
-                  Labour, of evaluated would he the a the our what is in the
-                  arduous sides behavioural is which the have didn't kicked
-                  records the it framework by the for traveler sure the can most
-                  well her. Entered have break himself cheek, and activity, for
-                  bit of text.
-                </p>
-              </div>
-
-              <div className="step">
-                <h3>Step 3</h3>
-                <p>
-                  Labour, of evaluated would he the a the our what is in the
-                  arduous sides behavioural is which the have didn't kicked
-                  records the it framework by the for traveler sure the can most
-                  well her. Entered have break himself cheek, and activity, for
-                  bit of text.
-                </p>
-              </div>
-
-              <div className="step">
-                <h3>Step 4</h3>
-                <p>
-                  Labour, of evaluated would he the a the our what is in the
-                  arduous sides behavioural is which the have didn't kicked
-                  records the it framework by the for traveler sure the can most
-                  well her. Entered have break himself cheek, and activity, for
-                  bit of text.
-                </p>
-              </div>
+              {recipeDetails?.data?.steps?.map((item, index) => (
+                <div className="step" key={index}>
+                  <h3>Step {index + 1}</h3>
+                  <p>{item}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

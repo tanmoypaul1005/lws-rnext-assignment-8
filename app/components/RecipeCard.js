@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const RecipeCard = ({ recipe }) => {
-  const { name, description, author, image, thumbnail, category, rating } =
+  const {_id, name, description, author, image, thumbnail, category, rating } =
     recipe;
 
   return (
-    <Link href={`/recipe/98`} className="card">
+    <Link href={`/recipe/${_id}`} className="card">
       <img
         src={thumbnail}
         className="rounded-md"

@@ -3,13 +3,13 @@ import Image from "next/image";
 
 const RecipeDetails = async ({ params }) => {
 
-  const recipeDetails = await fetch(
-    base_url + "/recipe/" + params?.recipe_id
-  ).then((res) => res.json());
+  // const recipeDetails = await fetch(
+  //   base_url + "/recipe/" + params?.recipe_id
+  // ).then((res) => res.json());
 
   return (
       <main>
-        <section>
+        {/* <section>
           <div className="container grid grid-cols-12 gap-8 justify-items-center">
             <div className="col-span-12 md:col-span-6">
               <Image
@@ -166,7 +166,7 @@ const RecipeDetails = async ({ params }) => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
   );
 };

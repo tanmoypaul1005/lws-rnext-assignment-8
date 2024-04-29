@@ -8,7 +8,6 @@ const RecipeDetails = async ({ params }) => {
   ).then((res) => res.json());
 
   return (
-    <body>
       <main>
         <section>
           <div className="container grid grid-cols-12 gap-8 justify-items-center">
@@ -169,7 +168,6 @@ const RecipeDetails = async ({ params }) => {
           </div>
         </section>
       </main>
-    </body>
   );
 };
 

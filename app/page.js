@@ -3,7 +3,7 @@ import RecipeList from "./components/RecipeList";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <section className="container">
         <div
           style={{
@@ -29,6 +29,6 @@ export default function Home() {
           <RecipeList />
         </div>
       </section>
-    </div>
+    </main>
   );
 }

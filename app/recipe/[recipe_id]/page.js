@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const RecipeDetails = async ({ params }) => {
   // http://localhost:3000/api/recipe/662ef0e14b2a1df29fbde4ca
 
@@ -12,10 +14,12 @@ const RecipeDetails = async ({ params }) => {
         <section>
           <div className="container grid grid-cols-12 gap-8 justify-items-center">
             <div className="col-span-12 md:col-span-6">
-              <img
+              <Image
                 src={recipeDetails?.data?.image}
                 alt=""
                 className="object-contain w-full h-full rounded-lg"
+                width={500}
+                height={400}
               />
             </div>
             <div className="flex flex-col justify-center col-span-12 py-8 md:col-span-6">

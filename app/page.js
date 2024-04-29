@@ -1,5 +1,4 @@
 import SideBar from "./components/SideBar";
-import RecipeCard from "./components/RecipeCard";
 import RecipeList from "./components/RecipeList";
 
 export default function Home() {

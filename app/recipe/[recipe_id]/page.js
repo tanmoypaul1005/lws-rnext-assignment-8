@@ -5,7 +5,7 @@ const RecipeDetails = async ({ params }) => {
 
   const recipeDetails = await fetch(
     "http://localhost:3000/api/recipe/" + params?.recipe_id
-  ).then((res) => res.json());Í
+  ).then((res) => res.json());
 
   return (
     <body>

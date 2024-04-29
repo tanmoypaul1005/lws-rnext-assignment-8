@@ -1,11 +1,11 @@
+import { base_url } from "@/app/utils/const";
 import Image from "next/image";
 
 const RecipeDetails = async ({ params }) => {
-  // http://localhost:3000/api/recipe/662ef0e14b2a1df29fbde4ca
 
-  // const recipeDetails = await fetch(
-  //   "http://localhost:3000/api/recipe/" + params?.recipe_id
-  // ).then((res) => res.json());
+  const recipeDetails = await fetch(
+    base_url + "/recipe/" + params?.recipe_id
+  ).then((res) => res.json());
 
   return (
     <body>

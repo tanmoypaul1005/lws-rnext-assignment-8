@@ -1,9 +1,10 @@
 
+import { base_url } from '../utils/const'
 import RecipeCard from './RecipeCard'
 
 const RecipeList =async () => {
 
-    const recipeList=await fetch("http://localhost:3000/api/recipe",{ cache: 'no-store' })
+    const recipeList=await fetch(base_url + "/recipe",{ cache: 'no-store' })
     .then((res)=>res.json())
     
 

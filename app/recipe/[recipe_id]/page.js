@@ -5,7 +5,7 @@ const RecipeDetails = async ({ params }) => {
 
   const recipeDetails = await fetch(
     base_url + "/recipe/" + params?.recipe_id
-  ).then((res) => res.json());
+  )    .then(res => res.json());
 
   return (
       <main>

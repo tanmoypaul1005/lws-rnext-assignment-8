@@ -4,9 +4,11 @@ import RecipeCard from './RecipeCard'
 
 const RecipeList =async () => {
 
-    const recipeList=await fetch(base_url + "/recipe",{ cache: 'no-store' })
-    .then((res)=>res.json())
     
+    const recipeList = await fetch(base_url + "/recipe",{ cache: 'force-cache' })
+    .then(res => res.json());
+
+
 
     return (
         <div className="col-span-12 md:col-span-9">

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import RecipeCard from './RecipeCard'
 
 const RecipeList =async () => {

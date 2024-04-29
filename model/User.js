@@ -9,6 +9,6 @@ const recipesSchema = new mongoose.Schema({
 });
 
 const recipes =
-  mongoose.models.recipes || mongoose.model("recipes", recipesSchema);
+  mongoose.models.user || mongoose.model("user", recipesSchema);
 
 export default recipes;

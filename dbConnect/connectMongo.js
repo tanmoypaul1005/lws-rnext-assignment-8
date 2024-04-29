@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = "mongodb+srv://khanaKhazana:HxSIQSK4V7JMc1xn@cluster0.nswkl.mongodb.net/khanaKhazana?retryWrites=true&w=majority";
 const cached = {};
 
 async function connectMongo() {

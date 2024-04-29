@@ -1,12 +1,10 @@
 
 import SideBar from "./components/SideBar";
-import TopBar from "./components/TopBar";
 import RecipeCard from "./components/RecipeCard";
 
 export default function Home() {
   return (
     <div>
-        <main>
           <section className="container">
             <div
               style={{
@@ -40,7 +38,6 @@ export default function Home() {
               </div>
             </div>
           </section>
-        </main>
     </div>
   );
 }

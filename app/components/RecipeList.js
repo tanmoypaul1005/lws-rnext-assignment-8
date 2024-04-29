@@ -3,18 +3,18 @@ import RecipeCard from './RecipeCard'
 
 const RecipeList =async () => {
 
-    const recipeList=await fetch("http://localhost:3000/api/recipe",{ cache: 'no-store' })
-    .then((res)=>res.json())
+    // const recipeList=await fetch("http://localhost:3000/api/recipe",{ cache: 'no-store' })
+    // .then((res)=>res.json())
     
 
     return (
         <div className="col-span-12 md:col-span-9">
         <div className="grid grid-cols-1 gap-6 my-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-          {
+          {/* {
             recipeList?.data?.map((item,index)=>(
               <RecipeCard recipe={item} key={index} />
             ))
-          }
+          } */}
         </div>
       </div>
     )

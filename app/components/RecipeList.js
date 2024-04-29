@@ -4,8 +4,7 @@ import RecipeCard from './RecipeCard'
 const RecipeList =async () => {
 
     const recipeList=await fetch("http://localhost:3000/api/recipe")
-    .then((res)=>res.json())
-    console.log("recipeList",recipeList)
+    .then((res)=>res.json())S
 
     return (
         <div className="col-span-12 md:col-span-9">

@@ -1,30 +1,22 @@
-import Image from "next/image";
 import Link from "next/link";
+import { base_url } from "../utils/const";
 
-const SideBar = () => {
+const SideBar = async () => {
+  const recipeList = await fetch(base_url + "/recipe").then((res) =>
+    res.json()
+  );
+
   return (
     <div className="col-span-12 md:col-span-3">
       <h3 className="text-xl font-bold">Recipes</h3>
       <ul className="pl-2 my-6 space-y-4 text-sm text-gray-500">
-        <li>
-          <Link href="/categorized">Morning Bliss Café</Link>
-        </li>
-
-        <li>
-          <Link href="/categorized">Sunrise Bites Kitchen</Link>
-        </li>
-
-        <li>
-          <Link href="/categorized">Brunch Haven Delights</Link>
-        </li>
-
-        <li>
-          <Link href="/categorized">Rise & Dine Eatery</Link>
-        </li>
-
-        <li>
-          <Link href="/categorized">Breakfast Oasis Junction</Link>
-        </li>
+        {[...new Set(recipeList?.data?.map((item) => item?.category))].map(
+          (category, index) => (
+            <li key={index}>
+              <Link href={`/categorized/${category}`}>{category}</Link>
+            </li>
+          )
+        )}
       </ul>
     </div>
   );

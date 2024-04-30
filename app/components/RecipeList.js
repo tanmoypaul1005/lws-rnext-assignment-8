@@ -3,11 +3,12 @@ import { base_url } from '../utils/const'
 import RecipeCard from './RecipeCard'
 
 const RecipeList =async () => {
-
     
     const recipeList = await fetch( base_url+ "/recipe")
     .then(res => res.json());
 
+    // console.log("xc",recipeList?.data?.filter((item)=>item.category==="Breakfast & Brunch"))
+    
 
     return (
         <div className="col-span-12 md:col-span-9">

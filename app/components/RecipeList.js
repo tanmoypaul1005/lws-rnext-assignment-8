@@ -1,11 +1,11 @@
-
+export const revalidate = 3600 // revalidate at most every hour
 import { base_url } from '../utils/const'
 import RecipeCard from './RecipeCard'
 
 const RecipeList =async () => {
 
     
-    const recipeList = await fetch( base_url+ "/recipe",{ cache: 'force-cache' })
+    const recipeList = await fetch( base_url+ "/recipe")
     .then(res => res.json());
 
 

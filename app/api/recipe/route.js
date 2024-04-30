@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic' // defaults to auto
+
 
 import connectMongo from "@/dbConnect/connectMongo";
 import recipes from "@/model/Recipes";

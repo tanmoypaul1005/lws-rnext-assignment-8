@@ -5,7 +5,7 @@ import RecipeCard from './RecipeCard'
 const RecipeList =async () => {
 
     
-    const recipeList = await fetch( "https://lws-rnext-assignment-8.vercel.app/api/recipe",{ cache: 'force-cache' })
+    const recipeList = await fetch( base_url+ "/recipe",{ cache: 'force-cache' })
     .then(res => res.json());
 
 

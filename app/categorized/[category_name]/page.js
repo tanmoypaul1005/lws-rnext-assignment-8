@@ -11,7 +11,6 @@ const CategoryList = async ({ params }) => {
     (item) => item.category === params?.category_name
   );
 
-  console.log("xc",categoryList)
   return (
     <body>
       <main>

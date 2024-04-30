@@ -1,6 +1,28 @@
 import { base_url } from "@/app/utils/const";
 import Image from "next/image";
 
+
+export async function generateMetadata({ params }, parent) {
+  // read route params
+  const id = params.recipe_id;
+
+  const recipeDetails = await fetch(base_url + "/recipe/" + id).then(res => res.json());
+
+  return {
+      title: recipeDetails?.name,
+      description: recipeDetails?.description,
+      openGraph: {
+          images: [
+              {
+                  url:recipeDetails?.image,
+                  width: 1200,
+                  height: 600,
+              },
+          ],
+      },
+  };
+}
+
 const RecipeDetails = async ({ params }) => {
 
   const recipeDetails = await fetch(

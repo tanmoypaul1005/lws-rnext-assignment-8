@@ -1,4 +1,5 @@
 
+import connectMongo from "@/dbConnect/connectMongo";
 import recipes from "@/model/Recipes";
 
 export async function GET() {

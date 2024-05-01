@@ -8,6 +8,8 @@ import { useState } from "react";
 function LoginForm() {
 
     const [error, setError] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const { setAuth } = useAuth();
     const router = useRouter();
@@ -15,8 +17,9 @@ function LoginForm() {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try {
-            const formData = new FormData(event.currentTarget);
-            const found = await performLogin(formData)
+             console.log("email",email)
+          
+            const found = await performLogin({email, password})
 
             if (found) {
                 setAuth(found);
@@ -33,12 +36,12 @@ function LoginForm() {
     <form onSubmit={handleSubmit} className="login-form">
       <div>
         <label for="email">Email Address</label>
-        <input type="email" name="email" id="email" />
+        <input required value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" name="email" id="email" />
       </div>
 
       <div>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
+        <input required value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" name="password" id="password" />
       </div>
 
       <button

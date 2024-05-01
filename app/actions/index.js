@@ -12,24 +12,47 @@ async function registerUser(formData) {
     body: JSON.stringify(user),
   });
   console.log("res", res.status);
-  const data = await res.json()
+  const data = await res.json();
 
-    if (data.status === 201) {
-      redirect("/login");
-    }
+  if (data.status === 201) {
+    redirect("/login");
+  }
 }
-
 
 async function performLogin(formData) {
-    // try {
-    //     const credential = {};
-    //     credential.email = formData.get("email");
-    //     credential.password = formData.get("password");
-    //     const found = await findUserByCredentials(credential);
-    //     return found;
-    // } catch (error) {
-    //     throw error;
-    // }
+  // try {
+  //     const credential = {};
+  //     credential.email = formData.get("email");
+  //     credential.password = formData.get("password");
+  //     const found = await findUserByCredentials(credential);
+  //     return found;
+  // } catch (error) {
+  //     throw error;
+  // }
+console.log("formData",formData)
+  try {
+    const res = await fetch(base_url + "/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    const data = await res.json();
+    if (data.success) {
+     return data.data;
+    } else {
+      // Show an error message
+      console.error(data.message);
+      throw error;
+      return false;
+      
+    }
+  } catch (error) {
+    console.error(error);
+    throw error;
+      return false;
+  }
 }
 
-export { registerUser,performLogin };
+export { registerUser, performLogin };

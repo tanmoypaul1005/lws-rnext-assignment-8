@@ -1,5 +1,6 @@
 import connectMongo from "@/dbConnect/connectMongo";
 import User from "@/model/User";
+import bcrypt from 'bcrypt';
 
 export async function POST(request) {
   try {
@@ -17,9 +18,8 @@ export async function POST(request) {
       });
     }
 
-    const _user = new User({
-      ...new_user,
-    });
+    const hashedPassword = await bcrypt.hash(user.password, 10);
+    const _user = new User({...new_user,password:hashedPassword});
 
     await _user.save();
     return Response.json({

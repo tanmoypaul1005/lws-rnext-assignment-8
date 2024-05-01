@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React from "react";
 import LoginForm from "./components/LoginForm";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   return (
@@ -19,6 +21,8 @@ const Login = () => {
           Create New Account
         </Link>
       </div>
+      <ToastContainer />
+
     </div>
   );
 };

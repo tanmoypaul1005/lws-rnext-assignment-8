@@ -39,19 +39,14 @@ console.log("formData",formData)
       body: JSON.stringify(formData),
     });
     const data = await res.json();
+    console.log("data",data)
     if (data.success) {
-     return data.data;
+     return data;
     } else {
-      // Show an error message
-      console.error(data.message);
-      throw error;
-      return false;
-      
+      return data;
     }
   } catch (error) {
-    console.error(error);
-    throw error;
-      return false;
+    return false
   }
 }
 

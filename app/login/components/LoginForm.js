@@ -2,8 +2,10 @@
 
 import { performLogin } from "@/app/actions";
 import { useAuth } from "@/app/hooks/useAuth";
+import { Toastr } from "@/app/utils/utilityFunctions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+
 
 function LoginForm() {
 
@@ -17,17 +19,22 @@ function LoginForm() {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try {
-             console.log("email",email)
-          
             const found = await performLogin({email, password})
-
-            if (found) {
-                setAuth(found);
-                router.push('/');
+            console.log("found",found)
+    
+            if (found?.success) {
+                Toastr({type:'success',message:found.message});
+                setAuth(found?.data);
+                setTimeout(() => {
+                    router.push('/');
+                }, 3000);
+                
             } else {
-                setError('Please provide a valid login credential');
+                Toastr({type:'error',message:found.message});
+                setError(found.message);
             }
         } catch (err) {
+            Toastr({type:'error',message:"An error occurred"});
             setError(err.message);
         }
     }
@@ -50,6 +57,8 @@ function LoginForm() {
       >
         Login
       </button>
+
+      <div className="text-[#eb4a36]">{error}</div>
     </form>
   );
 }

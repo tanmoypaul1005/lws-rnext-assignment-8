@@ -38,3 +38,25 @@ export async function POST(request) {
     });
   }
 }
+
+
+export async function GET(request,{ params }) {
+    try{
+        await connectMongo();
+        const user = await User.find({email:params?.email});
+        return Response.json({
+            status: 200,
+            success: true,
+            data: user,
+            message: "User find successfully",
+        });
+    }catch{
+        console.error(err);
+        return Response.json({
+            status: 500,
+            success: false,
+            data: null,
+            message: "Internal Server Error",
+        });
+    }
+}

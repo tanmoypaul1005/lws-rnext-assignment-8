@@ -20,7 +20,6 @@ function LoginForm() {
         e.preventDefault();
         try {
             const found = await performLogin({email, password})
-            console.log("found",found)
     
             if (found?.success) {
                 Toastr({type:'success',message:found.message});

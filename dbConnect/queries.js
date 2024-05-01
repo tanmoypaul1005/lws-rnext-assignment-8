@@ -3,8 +3,7 @@
 import User from "@/model/User";
 
 async function createUser(user) {
-  const _user = new User({ ...user });
-  return await _user.save();
+    return User.create(user)
 }
 
 export { createUser };

@@ -1,5 +1,7 @@
 import React from "react";
 import { registerUser } from "../actions";
+import RegisterButton from "./components/RegisterButton";
+
 
 const Register = () => {
   return (
@@ -9,30 +11,25 @@ const Register = () => {
         <form action={registerUser} className="login-form">
           <div>
             <label for="email">FirstName</label>
-            <input type="text" name="firstName" id="email" />
+            <input required type="text" name="firstName" id="email" />
           </div>
 
           <div>
             <label for="email">LastName</label>
-            <input type="text" name="lastName" id="email" />
+            <input required type="text" name="lastName" id="email" />
           </div>
 
           <div>
             <label for="email">Email Address</label>
-            <input type="email" name="email" id="email" />
+            <input required type="email" name="email" id="email" />
           </div>
 
           <div>
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" />
+            <input required type="password" name="password" id="password" />
           </div>
 
-          <button
-            type="submit"
-            className="bg-[#eb4a36] py-3 rounded-md text-white w-full mt-4"
-          >
-            Register
-          </button>
+       <RegisterButton/>
         </form>
 
         <p className="text-xs text-center text-gray-600">Or</p>

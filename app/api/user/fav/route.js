@@ -1,4 +1,5 @@
-const User = require("../models/User");
+import User from "@/model/User";
+
 
 export async function POST(request) {
   try {

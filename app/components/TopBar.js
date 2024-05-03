@@ -7,8 +7,6 @@ import { useAuth } from "../hooks/useAuth";
 const TopBar = () => {
   const { auth } = useAuth();
 
-  console.log("dddd", auth);
-
   return (
     <div>
       <nav>

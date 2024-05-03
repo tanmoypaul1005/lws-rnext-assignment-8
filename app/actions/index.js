@@ -20,7 +20,6 @@ async function registerUser(formData) {
 }
 
 async function performLogin(formData) {
-
   try {
     const res = await fetch(base_url + "/login", {
       method: "POST",
@@ -30,15 +29,29 @@ async function performLogin(formData) {
       body: JSON.stringify(formData),
     });
     const data = await res.json();
-    console.log("data",data)
+    console.log("data", data);
     if (data.success) {
-     return data;
+      return data;
     } else {
       return data;
     }
   } catch (error) {
-    return false
+    return false;
   }
 }
 
-export { registerUser, performLogin };
+async function setFavorite(body) {
+  const res = await fetch(base_url + "/user/fav", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  const data = await res.json();
+  console.log("data", data);
+
+  return data;
+}
+
+export { registerUser, performLogin, setFavorite };

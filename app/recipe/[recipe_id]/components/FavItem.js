@@ -1,35 +1,27 @@
 "use client";
+import { setFavorite } from "@/app/actions";
 import { useAuth } from "@/app/hooks/useAuth";
+import { base_url } from "@/app/utils/const";
 import { Toastr } from "@/app/utils/utilityFunctions";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 const FavItem = ({ recipe_id }) => {
   const { auth, setAuth } = useAuth();
 
+
   return (
     <>
-
     <ToastContainer />
       {auth?._id ? (
         <div
           onClick={async () => {
             const body = { recipe_id: recipe_id, user_id: auth?._id };
-            const res = await fetch("http://localhost:3000/api/user/fav", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(body),
-            });
-            const data = await res.json();
-            // console.log("data", data);
-
-            if (data.success) {
-              Toastr({ type: "success", message: data.message });
-              setAuth(data?.data);
-            } else {
-              Toastr({ type: "error", message: data.message });
-              return data;
+            const res=await setFavorite(body)
+            if(res.success){
+              Toastr({type:'success',message:res.message});
+              setAuth(res.data);
+            }else{
+              Toastr({type:'error',message:res.message});
             }
           }}
           className={`${

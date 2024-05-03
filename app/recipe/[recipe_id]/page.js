@@ -132,7 +132,7 @@ const RecipeDetails = async ({ params }) => {
             </div>
 
             <div className="flex justify-end gap-4">
-              <FavItem recipe_id={params.recipe_id} />
+              <FavItem recipe_id={params?.recipe_id} />
 
               <div className="flex gap-2 text-gray-600 cursor-pointer hover:text-[#0E79F6]">
                 <svg

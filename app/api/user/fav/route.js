@@ -4,7 +4,9 @@ import User from "@/model/User";
 export async function POST(request) {
   try {
     const req = await request.json();
+
     const user = await User.findById(req.user_id);
+    console.log("user",user)
     if (!user) {
       return Response.json({status:500,success: false, message: "User not found" });
     }
@@ -14,12 +16,12 @@ export async function POST(request) {
       // Recipe is in favourites, so remove it
       user.favourites.splice(index, 1);
       await user.save();
-      return Response.json({status:200,success: true, message: "Recipe removed from favourites" });
+      return Response.json({status:200,data:user, success: true, message: "Recipe removed from favourites" });
     } else {
       // Recipe is not in favourites, so add it
       user.favourites.push(req?.recipe_id);
       await user.save();
-      return Response.json({status:200,success: true, message: "Recipe added to favourites" });
+      return Response.json({status:200,data:user, success: true, message: "Recipe added to favourites" });
     }
   } catch (err) {
     console.error(err);

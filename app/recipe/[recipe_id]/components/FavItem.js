@@ -1,19 +1,37 @@
 "use client";
 import { useAuth } from "@/app/hooks/useAuth";
-import { Toastr } from "@/app/utils/utilityFunctions";
 
 
 import React from "react";
 
+const FavItem = ({ recipe_id }) => {
 
-const FavItem = ({recipe_id}) => {
   const { auth } = useAuth();
+  
 
-  console.log("auth",auth)
   return (
     <div
       onClick={async () => {
-      
+        console.log("auth", auth?._id, recipe_id)
+        try {
+          const res = await fetch(base_url + "/user/fav", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({recipe_id:recipe_id, user_id:auth?.id}),
+          });
+          const data = await res.json();
+          console.log("data",data)
+   
+          if (data.success) {
+            return data;
+          } else {
+            return data;
+          }
+        } catch (error) {
+          return false;
+        }
       }}
       className="flex gap-2 text-gray-600 cursor-pointer hover:text-[#eb4a36]"
     >

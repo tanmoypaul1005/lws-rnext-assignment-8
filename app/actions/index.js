@@ -20,16 +20,7 @@ async function registerUser(formData) {
 }
 
 async function performLogin(formData) {
-  // try {
-  //     const credential = {};
-  //     credential.email = formData.get("email");
-  //     credential.password = formData.get("password");
-  //     const found = await findUserByCredentials(credential);
-  //     return found;
-  // } catch (error) {
-  //     throw error;
-  // }
-console.log("formData",formData)
+
   try {
     const res = await fetch(base_url + "/login", {
       method: "POST",

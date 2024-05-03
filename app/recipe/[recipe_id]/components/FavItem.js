@@ -1,7 +1,7 @@
 "use client";
 import { useAuth } from "@/app/hooks/useAuth";
 import { Toastr } from "@/app/utils/utilityFunctions";
-import User from "@/model/User";
+
 
 import React from "react";
 
@@ -13,16 +13,7 @@ const FavItem = ({recipe_id}) => {
   return (
     <div
       onClick={async () => {
-        const user = await User.findById(auth._id);
-        console.log("user", user);
-        if (!user) {
-          Toastr({ message: "User not found" });
-        }
-
-        if (user.favourites.includes(recipe_id)) {
-        }
-        user.favourites.push(recipeId);
-        await user.save();
+      
       }}
       className="flex gap-2 text-gray-600 cursor-pointer hover:text-[#eb4a36]"
     >
